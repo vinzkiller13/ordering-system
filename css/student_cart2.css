@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+body {
+    background-image: url(mountain.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cont {
+    position: fixed;
+    width: 100%;
+    height: 140px;
+    font-weight: bold;
+    background: yellow;
+}
+
+header h1 {
+    color: black;
+    margin-left: 10px;
+    position: sticky;
+    top: 0;
+    margin-bottom: 25px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    background: royalblue;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 15px;
+}
+
+header a:hover {
+    color: royalblue;
+    background: white;
+    transition: .3s ease;
+    font-size: 21px;
+}
+
+.checkoutLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding: 20px;
+}
+
+.checkoutLayout .right {
+    background: yellow;
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    width: 400px;
+    height: 200px;
+    margin-top: 200px;
+    margin-left: 150px;
+}
+
+.checkoutLayout .right .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+    background: yellow;
+}
+
+.checkoutLayout .form input {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    background: rgb(251, 251, 141);
+    outline: none;
+}
+
+.checkoutLayout .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.buttonCheckOut {
+    width: 40%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+    background: royalblue;
+    font-size: 15px;
+}
+
+.buttonCheckOut:hover {
+    transition: .3s ease;
+    background: white;
+    color: royalblue;
+}
+
+.buttonCancel {
+    width: 40%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+    background: royalblue;
+    font-size: 15px;
+}
+
+.buttonCancel:hover {
+    transition: .3s ease;
+    background: white;
+    color: royalblue;
+}
+
+.popup {
+    width: 350px;
+    background: beige;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 0.4s, top 0.4s;
+    visibility: hidden;
+}
+
+.comment_box {
+    width: 350px;
+    background: beige;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+.comment_box .submit {
+    background: royalblue;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    color: white;
+}
+
+.comment_box .submit:hover {
+    background: beige;
+    color: royalblue;
+}
+
+.open-comment {
+    visibility: visible;
+    top: 50%;
+    transition: .3s ease;
+}
+
+.ok {
+    background: royalblue;
+    padding: 3px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    margin-top: 20px;
+}
+
+.ok:hover {
+    background: white;
+    color: royalblue;
+}
+
+.open-popup {
+    visibility: visible;
+    top: 20%;
+    transform: translate(-50%, -50%)scale(1.0);
+}
+
+h1 {
+    padding-left: 50px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.returnCart {
+    padding-top: 115px;
+}
+
+.returnCart .item {
+    display: grid;
+    grid-template-columns: 90px 1fr 200px 80px;
+    gap: 40px;
+    margin-top: 40px;
+    padding: 20px 10px;
+    box-shadow: 0 10px 20px black;
+    border-radius: 50px;
+    text-align: center;
+    align-items: center;
+    background: white;
+    margin-left: 25px;
+}
+
+.returnCart .item img {
+    width: 100%;
+    height: 90px;
+    border-radius: 50px;
+}
+
+.returnCart .item .returnPrice {
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.returnCart .item .price {
+    padding-top: 20px;
+    font-size: 15px;
+}

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+body {
+    background-image: url(mountain.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(mountain.jpg);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.tbl-container {
+    padding: 4rem 3rem;
+    overflow: hidden;
+    background-color: white;
+    height: 35rem;
+    width: 80rem;
+    border-radius: 10px;
+    box-shadow: 2px 11px 17px 1px rgba(0, 0, 0, 0.41);
+    -webkit-box-shadow: 2px 11px 17px 1px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 2px 11px 17px 1px rgba(0, 0, 0, 0.41);
+}
+
+thead {
+    position: sticky;
+}
+
+.tbl-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.tbl-oveflow {
+    overflow: visible;
+    margin-bottom: 5rem;
+}
+
+h2 {
+    font-weight: 800;
+}
