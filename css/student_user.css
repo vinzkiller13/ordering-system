@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 400px;
+    height: 500px;
+    background: red;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+
+
+.container form {
+    border: 2px dashed lightblue;
+    height: 150px;
+    margin: 30px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+label .fa-circle-arrow-up {
+    color: #007bff;
+    font-size: 60px;
+
+}
+
+.fa-circle-arrow-up {
+    margin-bottom: 10px;
+
+}
+
+.btn {
+    outline: none;
+    border: none;
+
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+    color: white;
+    background: #007bff;
+}
+
+.btn:hover {
+    transition: .3s ease;
+    color: #007bff;
+    background: white;
+}
+
+section .row {
+    background: beige;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .row i {
+    font-size: 25px;
+    color: #9fc2fe;
+}
+
+.progress-area .row .content {
+    width: 100%;
+    margin-left: 15px;
+}
+
+section .details span {
+    font-size: 14px;
+}
+
+.progress-area .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.progress-area .progress-bar {
+    height: 6px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    width: 0%;
+    background: #9fc2fe;
+    border-radius: inherit;
+
+}
+
+.uploaded-area {
+    max-height: 70px;
+    overflow-y: scroll;
+}
+
+.uploaded-area::-webkit-scrollbar {
+    width: 0px;
+}
+
+.uploaded-area .row .content {
+    display: flex;
+    align-items: center;
+}
+
+.uploaded-area .row .details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.uploaded-area .details .size {
+    font-size: 11px;
+    color: blue;
+}
+
+.uploaded-area .fa-check {
+    font-size: 18px;
+}
+
+.cont {
+    margin-top: 100px;
+    margin-left: 750px;
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    font-weight: bold;
+    background: #007bff;
+    text-align: center;
+}
+
+
+.cont p {
+    font-size: 20px;
+    max-height: 400px;
+}
+
+h3 {
+    margin-top: 0px;
+    padding-top: 20px;
+    background: gray;
+    padding-bottom: 20px;
+}
+
+.transaction-area {
+    max-height: 250px;
+    overflow-y: scroll;
+
+}
+
+.transaction-area p {
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.transaction-area::-webkit-scrollbar {
+    width: 20px;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.transaction-area::-webkit-scrollbar-thumb {
+    background: #ffc107;
+    /* Change the color of the scrollbar thumb */
+}

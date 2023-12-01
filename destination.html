@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destination Page</title>
+  <style>
+    /* Add some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Destination Page</h1>
+  <div id="fileInfo">
+    <!-- File information will be displayed here -->
+  </div>
+
+  <script>
+    // Function to extract query parameter value by name
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Retrieve the file name from the URL query parameters
+    const fileName = getQueryParam('file');
+
+
+    if (fileName) {
+    const fileInfoDiv = document.getElementById('fileInfo');
+    fileInfoDiv.innerHTML = `<p>Received file: <strong>${fileName}</strong></p>`;
+
+    // Check if the received file is an image
+    const supportedImageFormats = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+    const fileExtension = fileName.split('.').pop().toLowerCase();
+
+    if (supportedImageFormats.includes(fileExtension)) {
+        // Create an image element and set its source to the received file
+        const imageElement = document.createElement('img');
+        imageElement.src = `path/to/your/uploaded/files/${fileName}`; // Set the correct path to the uploaded file
+        imageElement.style.maxWidth = '100%'; // Adjust the image size
+
+        // Display the image on the page
+        fileInfoDiv.appendChild(imageElement);
+  }
+}
+
+  </script>
+</body>
+</html>

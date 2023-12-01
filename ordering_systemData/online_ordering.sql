@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 07:05 PM
+-- Generation Time: Dec 01, 2023 at 10:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -127,7 +127,8 @@ CREATE TABLE `tbl_category` (
 INSERT INTO `tbl_category` (`category_id`, `product_category`) VALUES
 (1, 'PE'),
 (2, 'Proware'),
-(3, 'Uniform');
+(3, 'Uniform'),
+(4, 'accessories');
 
 -- --------------------------------------------------------
 
@@ -169,6 +170,31 @@ CREATE TABLE `tbl_gender` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_image`
+--
+
+CREATE TABLE `tbl_image` (
+  `id` int(11) NOT NULL,
+  `receipt` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_image`
+--
+
+INSERT INTO `tbl_image` (`id`, `receipt`) VALUES
+(14, 'Tanjiro kamado.jpg'),
+(17, 'ad14df1013b562426e153abd657b9a8e.jpeg'),
+(19, 'Tanjiro kamado.jpg'),
+(21, 'map.png'),
+(22, 'ad14df1013b562426e153abd657b9a8e.jpeg'),
+(23, ''),
+(24, 'Tanjiro kamado.jpg'),
+(25, 'Tanjiro kamado.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_inventory`
 --
 
@@ -190,36 +216,21 @@ CREATE TABLE `tbl_product` (
   `size_id` int(11) NOT NULL,
   `cart_id` int(11) NOT NULL,
   `inventory_id` int(11) NOT NULL,
-  `gender_id` int(11) NOT NULL
+  `gender_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `product_price` float NOT NULL,
+  `product_size` varchar(255) NOT NULL,
+  `product_category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `size_id`, `cart_id`, `inventory_id`, `gender_id`) VALUES
-(1, 'Senior High Male Uniform', 0, 0, 0, 0, 0),
-(2, 'Senior High Female Uniform', 0, 0, 0, 0, 0),
-(3, 'Senior High PE Uniform', 0, 0, 0, 0, 0),
-(4, '  Senior High Chef Uniform', 0, 0, 0, 0, 0),
-(5, 'Senior High ID Lace', 0, 0, 0, 0, 0),
-(6, 'College ID Lace', 0, 0, 0, 0, 0),
-(7, 'Senior High Female Anniv Shirt', 0, 0, 0, 0, 0),
-(8, 'Senior High Male Anniv Shirt', 0, 0, 0, 0, 0),
-(9, 'BSIT Male Uniform', 0, 0, 0, 0, 0),
-(10, 'BSIT Female Uniform', 0, 0, 0, 0, 0),
-(11, 'College PE Uniform', 0, 0, 0, 0, 0),
-(12, 'College ID Lace', 0, 0, 0, 0, 0),
-(13, 'BSBA Male Uniform', 0, 0, 0, 0, 0),
-(14, 'BSBA Female Uniform', 0, 0, 0, 0, 0),
-(15, 'BSHM Male Uniform', 0, 0, 0, 0, 0),
-(16, 'BSHM Female Uniform', 0, 0, 0, 0, 0),
-(17, 'BSHM Chef Uniform', 0, 0, 0, 0, 0),
-(18, 'BSTM Male Uniform', 0, 0, 0, 0, 0),
-(19, ' BSTM Female Uniform', 0, 0, 0, 0, 0),
-(20, 'BSCpE Male Uniform', 0, 0, 0, 0, 0),
-(21, 'BSCpE Female Uniform', 0, 0, 0, 0, 0),
-(22, 'College NSTP Shirt', 0, 0, 0, 0, 0);
+INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `size_id`, `cart_id`, `inventory_id`, `gender_id`, `image`, `product_price`, `product_size`, `product_category`) VALUES
+(0, 'BSIT & BScPE Skirt', 0, 0, 0, 0, 0, 'BSIT Skirt.jpg', 195, 'small', 'uniform'),
+(0, 'BSIT & BScPE 3/4 Polo', 0, 0, 0, 0, 0, 'IMG_20231201_094154.jpg', 360, 'medium', 'uniform'),
+(0, 'BSIT & BScPE 3/4 Blouse', 0, 0, 0, 0, 0, 'IMG_20231201_094154.jpg', 350, '3xl', 'uniform');
 
 -- --------------------------------------------------------
 
@@ -260,7 +271,10 @@ INSERT INTO `tbl_size` (`size_id`, `product_size`) VALUES
 (2, 'Medium'),
 (3, 'Large'),
 (4, '2XL'),
-(5, '3XL');
+(5, '3XL'),
+(6, '4XL'),
+(7, '5XL'),
+(8, 'Special Size');
 
 --
 -- Indexes for dumped tables
@@ -315,16 +329,16 @@ ALTER TABLE `tbl_gender`
   ADD PRIMARY KEY (`gender_id`);
 
 --
+-- Indexes for table `tbl_image`
+--
+ALTER TABLE `tbl_image`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_inventory`
 --
 ALTER TABLE `tbl_inventory`
   ADD PRIMARY KEY (`inventory_id`);
-
---
--- Indexes for table `tbl_product`
---
-ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `tbl_programcategory`
@@ -376,7 +390,7 @@ ALTER TABLE `tbl_cart`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `category_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_course`
@@ -391,16 +405,16 @@ ALTER TABLE `tbl_gender`
   MODIFY `gender_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tbl_image`
+--
+ALTER TABLE `tbl_image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
 -- AUTO_INCREMENT for table `tbl_inventory`
 --
 ALTER TABLE `tbl_inventory`
   MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_product`
---
-ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tbl_programcategory`

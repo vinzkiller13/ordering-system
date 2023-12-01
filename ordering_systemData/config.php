@@ -1,3 +1,4 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'online_ordering');
+
+$conn = mysqli_connect('localhost', 'root', '', 'online_ordering');
 ?>
