@@ -13,6 +13,6 @@ window.onscroll = () => {
 
 
 document.querySelector('#close-edit').onclick = () => {
-    document.querySelector('.display-product-table').style.display = 'none';
+    document.querySelector('.edit-form-container').style.display = 'none';
     window.location.href = 'admin_manageCategory.php';
 };

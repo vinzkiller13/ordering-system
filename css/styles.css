@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 :root {
-    --blue: #2980b9;
+    --blue: #007bff;
     --red: tomato;
     --yellow: #ffc107;
     --black: #333;
@@ -135,6 +135,13 @@ section {
     color: var(--white);
 }
 
+.header .flex .logo:hover {
+    background: white;
+    color: var(--blue);
+    border-radius: 20px;
+    padding: 5px;
+}
+
 .header .flex .navbar a {
     margin-left: 2rem;
     font-size: 2rem;
@@ -142,8 +149,9 @@ section {
 }
 
 .header .flex .navbar a:hover {
-    color: yellow;
-    padding: 10px;
+    background: white;
+    color: #007bff;
+    padding: 5px;
     border-radius: 20px;
 }
 
@@ -155,9 +163,9 @@ section {
 }
 
 .header .flex .cart:hover {
-    padding: 20px;
+    padding: 5px;
     background: white;
-    color: yellow;
+    color: #007bff;
     border-radius: 20px;
 }
 

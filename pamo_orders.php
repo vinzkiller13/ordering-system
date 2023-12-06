@@ -1,3 +1,9 @@
+<?php
+
+include 'ordering_systemData/config.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -31,66 +37,35 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-      <td>1</td>
-        <td>2</td>
-        <td>23123</td>
-        <td>2</td>
-        <td>jacket</td>
-        <td>01/2/2001 14:58:02</td>
-        <td>pending</td>
-        <td></td>
-      </tr>
-      <tr>
-      <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr> 
-      <tr>
-      <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr> 
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr> 
-      <tr>
-      <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr> 
-      <tr>
-      <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>  
+    <?php
+               $select_query = mysqli_query($conn,  "SELECT * 
+               FROM `tbl_cart`
+               ");
+               if(mysqli_num_rows($select_query) > 0){
+                while($row = mysqli_fetch_assoc($select_query)){
+               
+                  
+            ?>
+                        <tr>
+                           <td><?php echo $row['cart_id'] ?></td>
+                           <td><?php echo $row['product_name']; ?></td>
+                           <td></td>
+                           <td><?php echo $row['order_quantity']; ?></td>
+                           <td></td>
+                           <td><?php echo $row['product_price']; ?></td>
+                           <td><?php echo $row['order_quantity']; ?></td>
+                           <td></td>
+                        </tr>
+            
+            <?php
+             
+               
+                     };    
+                        }
+                     else{
+                        echo "<div class='empty'>no product added</div>";
+                     };
+            ?>
     </tbody>
     </div>
   </table>

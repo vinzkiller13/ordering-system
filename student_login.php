@@ -1,7 +1,5 @@
 <?php
-@include 'config.php';
-
-
+@include 'ordering_system/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +25,11 @@
                 <span></span>
                 <label>STUDENT</label>
             </div>
-
             <div class="txt_field">
                 <input type="password" name="password" required>
                 <span></span>
                 <label>PASSWORD</label>
             </div>
-            
             <button type="submit" name="submit">LOGIN</button>
 
             <div class="pass"><a href=""> Forgot Password?</a></div>
