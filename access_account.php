@@ -1,13 +1,16 @@
-<?php
 
+<?php 
+include 'ordering_systemData/config.php';
 session_start();
 
 if (isset($_POST['submit'])){
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $pass = md5($_POST['password']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = md5($_POST['password']);
         
-    $select_student = "SELECT * FROM student_account WHERE username = '$username' && password = '$password'";
-    $result = mysqli_query($conn, $select);
+    $select_student_account = "SELECT * 
+			  FROM student_account 
+			  INNER JOIN access_account ON student_account.account_id = access_account.account_id";
+    $result = mysqli_query($conn, $select_student_account);
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
@@ -19,5 +22,5 @@ if (isset($_POST['submit'])){
     }else{
         $error[] = 'incorrect email or password!';
     }
-};
+}
 ?>

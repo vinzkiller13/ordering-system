@@ -1,5 +1,5 @@
 <?php
-include 'ordering_systemData/config.php';
+@include 'ordering_system/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@ include 'ordering_systemData/config.php';
 <body>
     <div class="form-container">
         <form action="access_account.php" method="post">
-            <h3>STUDENT LOGIN</h3>
+            <h3>ADMIN AND PAMO LOGIN</h3>
             <?php
             if(isset($error)){
                 foreach ($error as $error) {
@@ -21,7 +21,7 @@ include 'ordering_systemData/config.php';
             };
             ?>
             <div class="txt_field">
-                <input type="email" name="username" required>
+                <input type="username" name="username" required>
                 <span></span>
                 <label>USERNAME</label>
             </div>

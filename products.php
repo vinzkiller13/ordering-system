@@ -3,8 +3,9 @@
 
 include 'ordering_systemData/config.php';
 
-if(isset($_POST['add_to_cart'])){
 
+if(isset($_POST['add_to_cart'])){
+   
    $product_name = $_POST['product_name'];
    $product_price = $_POST['product_price'];
    $image = $_POST['image'];
@@ -23,8 +24,8 @@ if (mysqli_num_rows($select_cart) > 0) {
    }
 } else {
    // Product not in the cart, so insert a new record
-   $insert_product = mysqli_query($conn, "INSERT INTO `tbl_cart` (product_name, product_price, image, order_quantity, cart_id) 
-   VALUES('$product_name', '$product_price', '$image', '$order_quantity', '$cart_id')")or die('Query failed');
+   $insert_product = mysqli_query($conn, "INSERT INTO `tbl_cart` (product_name, product_price, image, order_quantity, cart_id, size_id) 
+   VALUES('$product_name', '$product_price', '$image', '$order_quantity', '$cart_id', '$size_id')")or die('Query failed');
    if ($insert_product) {
        $message[] = 'Product added to the cart';
    } else {

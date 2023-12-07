@@ -14,7 +14,7 @@ include 'ordering_systemData/config.php';
     <link rel="stylesheet" href="student_homepage.css">
     <link rel="stylesheet" href="css/pamo_order.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>PAMO ORDER MANGE</title>
+    <title>PAMO ORDER MANAGE</title>
 </head>
 <body>
 <div class="main-container">
@@ -53,7 +53,7 @@ include 'ordering_systemData/config.php';
                            <td><?php echo $row['order_quantity']; ?></td>
                            <td></td>
                            <td><?php echo $row['product_price']; ?></td>
-                           <td><?php echo $row['order_quantity']; ?></td>
+                           <td><?php echo $row['order_date']; ?></td>
                            <td></td>
                         </tr>
             
