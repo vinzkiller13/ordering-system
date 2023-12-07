@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2023 at 10:53 AM
+-- Generation Time: Dec 07, 2023 at 09:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -94,8 +94,8 @@ CREATE TABLE `student_account` (
 --
 
 INSERT INTO `student_account` (`student_id`, `username`, `password`, `account_id`, `programcategory_id`, `course_id`) VALUES
-(1, 'elaine', 'f3c2cefc1f3b082a56f52902484ca511', 1, 0, 0),
-(4, 'jose', '662eaa47199461d01a623884080934ab', 1, 0, 0);
+(5, 'tmp3475@gmail.com', 'fb47bb2639a2df6c3b4d36ab33a274ff', 1, 0, 0),
+(8, 'enriquez_elaine07@gmail.com', 'fb47bb2639a2df6c3b4d36ab33a274ff', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -105,9 +105,22 @@ INSERT INTO `student_account` (`student_id`, `username`, `password`, `account_id
 
 CREATE TABLE `tbl_cart` (
   `cart_id` int(11) NOT NULL,
+  `order_quantity` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
-  `order_quantity` int(11) NOT NULL
+  `product_name` varchar(255) NOT NULL,
+  `size_id` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_cart`
+--
+
+INSERT INTO `tbl_cart` (`cart_id`, `order_quantity`, `student_id`, `product_name`, `size_id`, `product_price`, `image`, `order_date`) VALUES
+(19, 2, 0, 'BSIT & BSCPE 3/4 Blouse', 0, 350, 'IMG_20231201_094154.jpg', '2023-12-07 07:30:15'),
+(20, 3, 0, 'BSIT & BScPE 3/4 Polo', 0, 360, 'IMG_20231201_094154.jpg', '2023-12-07 07:35:27');
 
 -- --------------------------------------------------------
 
@@ -200,7 +213,7 @@ INSERT INTO `tbl_image` (`id`, `receipt`) VALUES
 
 CREATE TABLE `tbl_inventory` (
   `inventory_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
+  `product_inStock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -218,19 +231,18 @@ CREATE TABLE `tbl_product` (
   `inventory_id` int(11) NOT NULL,
   `gender_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `product_price` float NOT NULL,
-  `product_size` varchar(255) NOT NULL,
-  `product_category` varchar(255) NOT NULL
+  `product_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `size_id`, `cart_id`, `inventory_id`, `gender_id`, `image`, `product_price`, `product_size`, `product_category`) VALUES
-(0, 'BSIT & BScPE Skirt', 0, 0, 0, 0, 0, 'BSIT Skirt.jpg', 195, 'small', 'uniform'),
-(0, 'BSIT & BScPE 3/4 Polo', 0, 0, 0, 0, 0, 'IMG_20231201_094154.jpg', 360, 'medium', 'uniform'),
-(0, 'BSIT & BScPE 3/4 Blouse', 0, 0, 0, 0, 0, 'IMG_20231201_094154.jpg', 350, '3xl', 'uniform');
+INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `size_id`, `cart_id`, `inventory_id`, `gender_id`, `image`, `product_price`) VALUES
+(30, 'BSIT & BSCPE 3/4 Blouse', 3, 3, 0, 20, 0, 'IMG_20231201_094154.jpg', 350),
+(31, 'BSIT & BScPE RTW Male Pants', 3, 9, 0, 15, 0, 'IMG_20231201_094615.jpg', 450),
+(32, 'BSIT & BScPE RTW Male Pants', 3, 9, 0, 15, 0, 'IMG_20231201_094615.jpg', 450),
+(36, 'BSIT & BScPE 3/4 Polo', 3, 5, 0, 20, 0, 'IMG_20231201_094154.jpg', 360);
 
 -- --------------------------------------------------------
 
@@ -341,6 +353,12 @@ ALTER TABLE `tbl_inventory`
   ADD PRIMARY KEY (`inventory_id`);
 
 --
+-- Indexes for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD PRIMARY KEY (`product_id`);
+
+--
 -- Indexes for table `tbl_programcategory`
 --
 ALTER TABLE `tbl_programcategory`
@@ -378,13 +396,13 @@ ALTER TABLE `pamo_account`
 -- AUTO_INCREMENT for table `student_account`
 --
 ALTER TABLE `student_account`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -414,7 +432,13 @@ ALTER TABLE `tbl_image`
 -- AUTO_INCREMENT for table `tbl_inventory`
 --
 ALTER TABLE `tbl_inventory`
-  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tbl_programcategory`
