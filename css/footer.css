@@ -1,0 +1,23 @@
+footer {
+    width: 100%;
+    background: linear-gradient(to right, #007bff, #ffc107);
+    color: #fff;
+    padding: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: auto;
+}
+
+.row {
+
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    color: #fff;
+}

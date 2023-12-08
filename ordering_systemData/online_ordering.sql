@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2023 at 09:02 AM
+-- Generation Time: Dec 08, 2023 at 09:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -86,16 +86,17 @@ CREATE TABLE `student_account` (
   `password` varchar(50) NOT NULL,
   `account_id` int(11) NOT NULL,
   `programcategory_id` int(11) NOT NULL,
-  `course_id` int(11) NOT NULL
+  `course_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `student_account`
 --
 
-INSERT INTO `student_account` (`student_id`, `username`, `password`, `account_id`, `programcategory_id`, `course_id`) VALUES
-(5, 'tmp3475@gmail.com', 'fb47bb2639a2df6c3b4d36ab33a274ff', 1, 0, 0),
-(8, 'enriquez_elaine07@gmail.com', 'fb47bb2639a2df6c3b4d36ab33a274ff', 1, 0, 0);
+INSERT INTO `student_account` (`student_id`, `username`, `password`, `account_id`, `programcategory_id`, `course_id`, `image`) VALUES
+(5, 'tmp3475@gmail.com', 'fb47bb2639a2df6c3b4d36ab33a274ff', 1, 0, 0, ''),
+(8, 'enriquez_elaine07@gmail.com', 'fb47bb2639a2df6c3b4d36ab33a274ff', 1, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -119,8 +120,7 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`cart_id`, `order_quantity`, `student_id`, `product_name`, `size_id`, `product_price`, `image`, `order_date`) VALUES
-(19, 2, 0, 'BSIT & BSCPE 3/4 Blouse', 0, 350, 'IMG_20231201_094154.jpg', '2023-12-07 07:30:15'),
-(20, 3, 0, 'BSIT & BScPE 3/4 Polo', 0, 360, 'IMG_20231201_094154.jpg', '2023-12-07 07:35:27');
+(20, 2, 0, 'BSIT & BScPE 3/4 Polo', 0, 360, 'IMG_20231201_094154.jpg', '2023-12-07 09:39:39');
 
 -- --------------------------------------------------------
 
@@ -242,7 +242,8 @@ INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `size_id
 (30, 'BSIT & BSCPE 3/4 Blouse', 3, 3, 0, 20, 0, 'IMG_20231201_094154.jpg', 350),
 (31, 'BSIT & BScPE RTW Male Pants', 3, 9, 0, 15, 0, 'IMG_20231201_094615.jpg', 450),
 (32, 'BSIT & BScPE RTW Male Pants', 3, 9, 0, 15, 0, 'IMG_20231201_094615.jpg', 450),
-(36, 'BSIT & BScPE 3/4 Polo', 3, 5, 0, 20, 0, 'IMG_20231201_094154.jpg', 360);
+(36, 'BSIT & BScPE 3/4 Polo', 3, 5, 0, 20, 0, 'IMG_20231201_094154.jpg', 360),
+(39, 'COLLEGE PE Shirt', 1, 2, 0, 12, 0, 'IMG_20231201_094840.jpg', 160);
 
 -- --------------------------------------------------------
 
@@ -402,7 +403,7 @@ ALTER TABLE `student_account`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -438,7 +439,7 @@ ALTER TABLE `tbl_inventory`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tbl_programcategory`
