@@ -1,3 +1,7 @@
+<?php
+ 
+include 'ordering_systemData/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +15,25 @@
 </head>
 <body>
 <?php include 'header.php'; ?>
-  
+  <?php
+    $select_query = mysqli_query($conn,  "SELECT * FROM student_account");
+    if(mysqli_num_rows($select_query) > 0){
+      while($row = mysqli_fetch_assoc($select_query)){
+    ?>
     <section>
         <img src="uploaded_img/do.png" alt="Profile Picture">
         <h2>Your Name</h2>
-        <p>Email: your.email@example.com</p>
+        <p>Email: <?php echo $row['username']; ?> </p>
         <p>About Me: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <button onclick="editProfile()">Edit Profile</button>
     </section>
+  <?php
+   };    
+  }
+else{
+  echo "<div class='empty'>no data selected</div>";
+};
+  ?>
 
 
   <script src="js/script.js"></script>

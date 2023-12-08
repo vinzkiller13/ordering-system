@@ -17,6 +17,8 @@
       $insert_query = mysqli_query($conn, "INSERT INTO `tbl_product` (product_name, image, product_price, inventory_id, size_id, category_id) 
       VALUES ('$product_name', '$image', '$product_price', '$product_inStock', '$product_size', '$product_category')") or die('Query failed');
 
+      
+
     if($insert_query){
         // If insertion is successful
         move_uploaded_file($p_image_tmp_name, $p_image_folder);
@@ -37,8 +39,7 @@
          $message[] = 'product could not be deleted';
       };
    };
-   
-   
+  
 ?>
 
 <!DOCTYPE html>
@@ -49,11 +50,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Admin Manage Category</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
    <?php include 'message.php';?>
-   <?php include 'header.php'; ?>
+   <?php include 'pamo_header.php'; ?>
    <div class="container">
 
       <section>

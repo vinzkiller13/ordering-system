@@ -176,28 +176,18 @@ section {
 
 }
 
-
-.header .flex .products {
+.header .flex a {
+    margin-left: 2rem;
     font-size: 2rem;
     color: var(--white);
-}
-
-.header .flex .products:hover {
-    color: var(--blue);
-    background: var(--white);
-    border-radius: 20px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .shs_items a:hover {
-    background: #fff;
-    border-radius: 20px;
+    background: white;
+    color: black;
+    border-radius: 25px;
     transition: ease .2s;
-}
-
-.shs_items li a {
-    text-align: center;
-    align-items: center;
 }
 
 .header .flex li a {
@@ -213,16 +203,21 @@ section {
 
 .header .flex .shs_items li a {
     font-size: 14px;
-    color: black;
-    width: 75px;
-    margin-right: 20px;
+    color: white;
+    width: 90px;
+
+}
+
+.header .flex .shs_items li a:hover {
+    padding: 5px;
+
 }
 
 .header .flex li:hover .shs_items {
     position: fixed;
     display: initial;
     background: #ffc107;
-    border-radius: 10px;
+
 }
 
 .header .flex .cart {
@@ -232,6 +227,12 @@ section {
     padding: 20px;
 }
 
+.header .flex .cart:hover {
+    padding: 5px;
+    background: white;
+    color: #007bff;
+    border-radius: 20px;
+}
 
 .header .flex .cart span {
     padding: .1rem .5rem;
