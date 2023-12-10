@@ -1,7 +1,10 @@
 .container {
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
     width: 400px;
-    height: 500px;
-    background: red;
+    height: 300px;
+    background: white;
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -9,8 +12,6 @@
     text-align: center;
     color: white;
 }
-
-/* 
 
 .container form {
     border: 2px dashed lightblue;
@@ -28,12 +29,10 @@
 label .fa-circle-arrow-up {
     color: #007bff;
     font-size: 60px;
-
 }
 
 .fa-circle-arrow-up {
     margin-bottom: 10px;
-
 }
 
 .btn {
@@ -51,4 +50,4 @@ label .fa-circle-arrow-up {
     transition: .3s ease;
     color: #007bff;
     background: white;
-} */
+}

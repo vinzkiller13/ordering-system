@@ -16,7 +16,8 @@ include 'ordering_systemData/config.php'
             <li><a href="student_myAccount.php"><i class="fa-solid fa-user"></i></a>
                <ul class="shs_items">
                   <li><a href="change_password.php">Change Password</a></li>
-                  <li><a href="logout.php">Logout</a></li>
+                  <li><a href="student_user.php">Upload Receipt</a></li>
+                  <li><a href="logout.php">LOGGING OUT</a></li>
                </ul>
             </li>
          </ul>

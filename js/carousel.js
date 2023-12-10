@@ -1,18 +1,20 @@
-let slideIndex = 0;
-showSlides();
+let currentIndex = 0;
 
-function showSlides() {
-    let slides = document.getElementsByClassName("slides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+function showSlide(index) {
+    const carousel = document.querySelector('.carousel');
+    const totalSlides = document.querySelectorAll('.carousel-item').length;
+    currentIndex = (index + totalSlides) % totalSlides;
+    const translateValue = -currentIndex * 100 + '%';
+    carousel.style.transform = `translateX(${translateValue})`;
 }
 
-function changeSlide(n) {
-    slideIndex += n;
-    showSlides();
+function nextSlide() {
+    showSlide(currentIndex + 1);
 }
+
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+setInterval(nextSlide, 5000); // Auto-advance every 5 seconds
+

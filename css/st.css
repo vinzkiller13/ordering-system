@@ -31,7 +31,7 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    /* padding-bottom: 5rem; */
+
 }
 
 section {
@@ -176,18 +176,28 @@ section {
 
 }
 
-.header .flex a {
-    margin-left: 2rem;
+
+.header .flex .products {
     font-size: 2rem;
     color: var(--white);
-    padding: 20px;
+}
+
+.header .flex .products:hover {
+    color: var(--blue);
+    background: var(--white);
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .shs_items a:hover {
-    background: white;
-    color: black;
-    border-radius: 25px;
+    background: #fff;
+    border-radius: 20px;
     transition: ease .2s;
+}
+
+.shs_items li a {
+    text-align: center;
+    align-items: center;
 }
 
 .header .flex li a {
@@ -203,21 +213,16 @@ section {
 
 .header .flex .shs_items li a {
     font-size: 14px;
-    color: white;
-    width: 90px;
-
-}
-
-.header .flex .shs_items li a:hover {
-    padding: 5px;
-
+    color: black;
+    width: 75px;
+    margin-right: 20px;
 }
 
 .header .flex li:hover .shs_items {
     position: fixed;
     display: initial;
     background: #ffc107;
-
+    border-radius: 10px;
 }
 
 .header .flex .cart {
@@ -227,12 +232,6 @@ section {
     padding: 20px;
 }
 
-.header .flex .cart:hover {
-    padding: 5px;
-    background: white;
-    color: #007bff;
-    border-radius: 20px;
-}
 
 .header .flex .cart span {
     padding: .1rem .5rem;
@@ -353,12 +352,13 @@ section {
     justify-content: center;
 }
 
-.products .box-container .box {
+.box-container .box {
     text-align: center;
     padding: 2rem;
     box-shadow: var(--box-shadow);
     border: var(--border);
     border-radius: .5rem;
+    background-color: var(--white);
 }
 
 .products .box-container .box img {
@@ -379,6 +379,7 @@ section {
 .shopping-cart table {
     text-align: center;
     width: 100%;
+    background-color: var(--white);
 }
 
 .shopping-cart table thead th {
@@ -579,22 +580,6 @@ section {
     padding: 0 .5rem;
     text-transform: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* media queries  */

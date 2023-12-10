@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --blue: #007bff;
+    --red: tomato;
+    --yellow: #ffc107;
+    --black: #333;
+    --white: #fff;
+    --bg-color: #eee;
+    --dark-bg: rgba(0, 0, 0, .7);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --border: .1rem solid #999;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: var(--blue);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+}
+
+.header .flex {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .flex .logo {
+    margin-right: auto;
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.header .flex .logo:hover {
+    background: white;
+    color: var(--blue);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.header .flex .navbar a {
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: var(--white);
+    list-style: none;
+}
+
+.header .flex .navbar li {
+    list-style: none;
+}
+
+.fa-user {
+    background: black;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+}
+
+.fa-user:hover {
+    background: white;
+    color: black;
+    transition: .2s ease;
+}
+
+.shs_items {
+    display: none;
+
+}
+
+
+.header .flex .products {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.header .flex .products:hover {
+    color: var(--blue);
+    background: var(--white);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.shs_items a:hover {
+    background: #fff;
+    border-radius: 20px;
+    transition: ease .2s;
+}
+
+.shs_items li a {
+    text-align: center;
+    align-items: center;
+}
+
+.header .flex li a {
+    display: flex;
+    text-decoration: none;
+
+}
+
+.header .flex li {
+    position: relative;
+
+}
+
+.header .flex .shs_items li a {
+    font-size: 14px;
+    color: black;
+    width: 75px;
+    margin-right: 20px;
+}
+
+.header .flex li:hover .shs_items {
+    position: fixed;
+    display: initial;
+    background: #ffc107;
+    border-radius: 10px;
+}
+
+.header .flex .cart {
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: var(--white);
+    padding: 20px;
+}
+
+
+.header .flex .cart span {
+    padding: .1rem .5rem;
+    border-radius: .5rem;
+    background-color: var(--white);
+    color: var(--blue);
+    font-size: 2rem;
+}
+
+#menu-btn {
+    margin-left: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    color: var(--white);
+    display: none;
+}

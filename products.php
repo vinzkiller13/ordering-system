@@ -24,8 +24,8 @@ if (mysqli_num_rows($select_cart) > 0) {
    }
 } else {
    // Product not in the cart, so insert a new record
-   $insert_product = mysqli_query($conn, "INSERT INTO `tbl_cart` (product_name, product_price, image, order_quantity, cart_id, size_id) 
-   VALUES('$product_name', '$product_price', '$image', '$order_quantity', '$cart_id', '$size_id')")or die('Query failed');
+   $insert_product = mysqli_query($conn, "INSERT INTO `tbl_cart` (product_name, product_price, image, order_quantity) 
+   VALUES('$product_name', '$product_price', '$image', '$order_quantity')")or die('Query failed');
    if ($insert_product) {
        $message[] = 'Product added to the cart';
    } else {
@@ -45,7 +45,8 @@ if (mysqli_num_rows($select_cart) > 0) {
    <title>products</title>
    <link rel="stylesheet" href="css/footer.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/st.css">
+   <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
    
