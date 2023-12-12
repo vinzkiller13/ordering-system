@@ -1,5 +1,5 @@
 <?php
-@include 'config.php';
+@include 'ordering_systemData/config.php';
 
 $error = array(); // Initialize an empty array for errors
 
@@ -11,14 +11,14 @@ if (isset($_POST['submit'])) {
     $account_id = $_POST["account_id"];
 
     // Check if the user already exists
-    $check_query = "SELECT * FROM student_account WHERE username = '$username'";
+    $check_query = "SELECT * FROM admin_account WHERE username = '$username'";
     $check_result = mysqli_query($conn, $check_query);
 
     if (mysqli_num_rows($check_result) > 0) {
         $error[] = 'User already exists!';
     } else {
         if ($password == $confirm_password) {
-            $insert_query = "INSERT INTO student_account (username, password, account_id) VALUES ('$username', '$hashpassword', '$account_id')";
+            $insert_query = "INSERT INTO admin_account (username, password, account_id) VALUES ('$username', '$hashpassword', '$account_id')";
             $insert_result = mysqli_query($conn, $insert_query);
 
             if ($insert_result) {
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
         ?>
         <form action="" method="post">
             <div class="txt_field">
-                <input type="text" name="username" required>
+                <input type="email" name="username" required>
                 <span></span>
                 <label>Username</label>
             </div>

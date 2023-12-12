@@ -6,12 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ADMIN AND PAMO LOGIN</title>
     <link rel="stylesheet" href="css/stud_login.css">
 </head>
 <body>
     <div class="form-container">
-        <form action="access_account.php" method="post">
+        <?php include 'admin_access.php'; ?>
+        <?php include 'pamo_access.php'; ?>
+        <form method="post">
             <h3>ADMIN AND PAMO LOGIN</h3>
             <?php
             if(isset($error)){
@@ -21,7 +23,7 @@
             };
             ?>
             <div class="txt_field">
-                <input type="username" name="username" required>
+                <input type="email" name="username" required>
                 <span></span>
                 <label>USERNAME</label>
             </div>

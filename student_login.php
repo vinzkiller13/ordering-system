@@ -11,7 +11,8 @@ include 'ordering_systemData/config.php';
 </head>
 <body>
     <div class="form-container">
-        <form action="access_account.php" method="post">
+        <?php include 'access_account.php'; ?>
+        <form method="post">
             <h3>STUDENT LOGIN</h3>
             <?php
             if(isset($error)){

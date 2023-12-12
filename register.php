@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
             $insert_result = mysqli_query($conn, $insert_query);
 
             if ($insert_result) {
-                header('location: login.php');
+                $message[] = 'Register Successfully';
             } else {
                 $error[] = 'Error inserting user data!';
             }
@@ -63,6 +63,15 @@ if (isset($_POST['submit'])) {
             }
         }
         ?>
+        <?php
+
+            if(isset($message)){
+            foreach($message as $message){
+                echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+            };
+            };
+
+            ?>
         <form action="" method="post">
             <div class="txt_field">
                 <input type="email" name="username" required>
@@ -85,6 +94,7 @@ if (isset($_POST['submit'])) {
             
             <button type="submit" name="submit">Register</button>
         </form>
+        
     </div>
 </body>
 </html>
