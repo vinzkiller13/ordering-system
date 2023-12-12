@@ -13,7 +13,6 @@ if (isset($_POST['submit'])) {
             $row = mysqli_fetch_array($result);
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            // Debugging information
             echo 'Entered Password: ' . $password . '<br>';
             echo 'Hashed Password from Database: ' . $hashedPassword . '<br>';
 

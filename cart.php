@@ -35,6 +35,7 @@ if(isset($_GET['delete_all'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    <link rel="stylesheet" href="css/student_shopping.css">
    <link rel="stylesheet" href="css/st.css">
+   <link rel="stylesheet" href="css/button.css">
    <link rel="stylesheet" href="css/products.css">
 
 </head>
@@ -105,19 +106,19 @@ if(isset($_GET['delete_all'])){
    </table>
 
    <button onclick="openModal()" id="status1">Place Order</button>
-    <button onclick="cancelModalOpen()" id="status2">Cancel Order</button>
+   <button onclick="cancelModalOpen()" id="status2">Cancel Order</button>
   </div>
   <div id="orderModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal">&times;</span>
-      <p>Are you sure you want to place the order?</p>
+      <span class="close" onclick="closeModal('orderModal')">&times;</span>
+      <p class="text">Are you sure you want to place the order?</p>
       <button onclick="placeOrder()">Yes, Place Order</button>
     </div>
   </div>
   <div id="cancelModal" class="modal">
   <div class="modal_content">
-    <span class="close" onclick="closeModal">&times;</span>
-    <p>Please wait for the notification of the status of your order.</p>
+    <span class="close" onclick="closeModal('cancelModal')">&times;</span>
+    <p class="text">Please wait for the notification of the status of your order.</p>
     <button onclick="cancelOrder()">OK</button>
   </div>
   </div>
