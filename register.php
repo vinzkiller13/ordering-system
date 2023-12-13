@@ -5,13 +5,14 @@ $error = array(); // Initialize an empty array for errors
 
 if (isset($_POST['submit'])) {
     $username = $_POST["username"];
+    $name = $_POST["name"];
+    $programCategory_id = $_POST["programCategory_id"];
+    $course_id = $_POST["course_id"];
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
     $confirm_password = mysqli_real_escape_string($conn, $_POST["confirm_password"]);
     $hashpassword = md5($password);
     $account_id = $_POST["account_id"];
     
-
-    // Check if the user already exists
     $check_query = "SELECT * FROM student_account WHERE username = '$username'";
     $check_result = mysqli_query($conn, $check_query);
 
@@ -19,7 +20,8 @@ if (isset($_POST['submit'])) {
         $error[] = 'User already exists!';
     } else {
         if ($password == $confirm_password) {
-            $insert_query = "INSERT INTO student_account (username, password, account_id) VALUES ('$username', '$hashpassword', '$account_id')";
+            $insert_query = "INSERT INTO student_account (name, username, password, account_id) 
+            VALUES ('$name', '$username', '$hashpassword', '$account_id')";
             $insert_result = mysqli_query($conn, $insert_query);
 
             if ($insert_result) {
@@ -74,10 +76,38 @@ if (isset($_POST['submit'])) {
             ?>
         <form action="" method="post">
             <div class="txt_field">
+                <label for="programCategory_name">Program: </label>
+                <select id="programCategory_name" name="programCategory_name">
+                    <option value="1">Senior High</option>
+                    <option value="2">College</option>
+                </select>
+            </div>
+            <div class="txt_field">
+            <label for="course_name">Course: </label>
+                <select id="course_name" name="course_name">
+                    <option value="1">ABM</option>
+                    <option value="2">HUMMS</option>
+                    <option value="3">STEM</option>
+                    <option value="4">MAWD</option>
+                    <option value="5">BSIT</option>
+                    <option value="6">BSBA</option>
+                    <option value="7">BSHM</option>
+                    <option value="8">BSTM</option>
+                    <option value="9">BScPE</option>
+                </select>
+            </div>
+            
+            <div class="txt_field">
+                <input type="text" name="name" required>
+                <span></span>
+                <label>NAME</label>
+            </div>
+            <div class="txt_field">
                 <input type="email" name="username" required>
                 <span></span>
                 <label>USERNAME</label>
             </div>
+           
             <div class="txt_field">
                 <input type="password" name="password" required>
                 <span></span>
@@ -90,7 +120,8 @@ if (isset($_POST['submit'])) {
             </div>
            
             <input type="hidden" name="account_id" value="1">
-
+            <input type="hidden" name="programCategory_id" value="<?php echo $programCategory_id; ?>">
+            <input type="hidden" name="course_id" value="<?php echo $course_id; ?>">  
             
             <button type="submit" name="submit">Register</button>
         </form>

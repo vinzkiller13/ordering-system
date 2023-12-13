@@ -1,4 +1,9 @@
-    
+<?php session_start(); 
+  if (isset($_SESSION['name'])) {
+    echo $_SESSION['name'];
+} else {
+    // echo "Name not set in session";
+}?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +17,14 @@
    <link rel="stylesheet" href="css/footer.css">
    <link rel="stylesheet" href="css/carousel.css">
    <link rel="stylesheet" href="css/homepage.css">
+   <link rel="stylesheet" href="css/products.css">
 
 </head>
 <body>
-  <?php include 'header.php'; ?>
+  <?php include 'header.php'; 
+   
+  ?>
+  
   <div class="carousel-container">
     <div class="carousel">
       <div class="carousel-item"><img src="uploaded_img/1.jpg" alt="Image 1"></div>

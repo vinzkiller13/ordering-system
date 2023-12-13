@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/change_password.css">
+    <link rel="stylesheet" href="css/password.css">
 </head>
 
 <body>
@@ -49,7 +50,7 @@
     </div>
 
     <?php include 'footer.php'; ?>
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script>        
 </body>
 
 </html>

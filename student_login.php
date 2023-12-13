@@ -1,5 +1,6 @@
 <?php
 include 'ordering_systemData/config.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +39,7 @@ include 'ordering_systemData/config.php';
                 <a href="register.php">Register</a>
             </div>
         </form>
+        
     </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
- 
+
+session_start();
 include 'ordering_systemData/connect.php';
 ?>
 <!DOCTYPE html>
@@ -16,25 +17,16 @@ include 'ordering_systemData/connect.php';
 </head>
 <body>
 <?php include 'header.php'; ?>
-  <?php
-    $select_query = mysqli_query($conn,  "SELECT * FROM student_account");
-    if(mysqli_num_rows($select_query) > 0){
-      while($row = mysqli_fetch_assoc($select_query)){
-    ?>
+
+  
     <section>
-        <img src="uploaded_img/do.png" alt="Profile Picture">
+        <img src="uploaded_img/kim.jpg" alt="Profile Picture">
         <h2>Your Name</h2>
-        <p>Email: <?php echo $row['username']; ?> </p>
+        <p>Email: <?php echo "".$_SESSION['username'] ?> </p>
         
         <button onclick="editProfile()">Edit Profile</button>
     </section>
-  <?php
-   };    
-  }
-else{
-  echo "<div class='empty'>no data selected</div>";
-};
-  ?>
+
 
 
   <script src="js/script.js"></script>

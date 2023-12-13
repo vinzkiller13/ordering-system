@@ -1,4 +1,5 @@
 <?php
+   session_start();
 
 include 'ordering_systemData/config.php';
 
@@ -116,7 +117,7 @@ if(isset($_GET['delete_all'])){
     </div>
   </div>
   <div id="cancelModal" class="modal">
-  <div class="modal_content">
+  <div class="modal-content">
     <span class="close" onclick="closeModal('cancelModal')">&times;</span>
     <p class="text">Please wait for the notification of the status of your order.</p>
     <button onclick="cancelOrder()">OK</button>

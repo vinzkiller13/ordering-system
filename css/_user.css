@@ -1,0 +1,109 @@
+.container {
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    width: 400px;
+    height: 350px;
+    background: white;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.container form {
+    border: 2px dashed lightblue;
+    height: 150px;
+    margin: 30px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+label .fa-circle-arrow-up {
+    color: #007bff;
+    font-size: 60px;
+}
+
+.fa-circle-arrow-up {
+    margin-bottom: 10px;
+}
+
+.btn {
+    outline: none;
+    border: none;
+
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+    color: white;
+    background: #007bff;
+}
+
+.btn:hover {
+    transition: .3s ease;
+    color: #007bff;
+    background: white;
+}
+
+#file-name-display {
+    font-size: 18px;
+    color: #007bff;
+    overflow-y: auto;
+}
+
+#file-name-display::-webkit-scrollbar {
+    width: 12px;
+}
+
+#file-name-display::-webkit-scrollbar-thumb {
+    background-color: #666;
+
+}
+
+#file-name-display::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+
+}
+
+#file-name-display::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+
+}
+
+.message {
+    background-color: var(--blue);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    border-radius: .5rem;
+    background-color: var(--white);
+    padding: 1.5rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.message span {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.message i {
+    font-size: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.message i:hover {
+    color: var(--red);
+}

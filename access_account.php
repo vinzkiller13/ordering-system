@@ -14,12 +14,12 @@ if (isset($_POST['submit'])) {
             $row = mysqli_fetch_array($result);
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            // Debugging information
             echo 'Entered Password: ' . $password . '<br>';
             echo 'Hashed Password from Database: ' . $hashedPassword . '<br>';
 
             if (password_verify($password, $hashedPassword)) {
                 if ($row['account_id'] == 1) {
+                    $_SESSION['name'] = $name;
                     header('location: student_homepage.php');
                     exit();
                 } else {
@@ -32,7 +32,6 @@ if (isset($_POST['submit'])) {
             $error[] = 'Incorrect email or password!';
         }
     } else {
-        // Handle database query error
         $error[] = 'Database error: ' . mysqli_error($conn);
     }
 }

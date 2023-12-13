@@ -1,5 +1,5 @@
 <?php
-include 'ordering_systemData/config.php'
+include 'ordering_systemData/config.php';
 ?>
 <header class="header">
 
@@ -9,7 +9,6 @@ include 'ordering_systemData/config.php'
       <a href="products.php" class="products">products</a>
       
      
-
       <nav class="navbar">
          
          <ul class="sd_program">
