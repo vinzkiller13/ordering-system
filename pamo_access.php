@@ -13,8 +13,6 @@ if (isset($_POST['submit'])) {
             $row = mysqli_fetch_array($result);
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            echo 'Entered Password: ' . $password . '<br>';
-            echo 'Hashed Password from Database: ' . $hashedPassword . '<br>';
 
             if (password_verify($password, $hashedPassword)) {
                 if ($row['account_id'] == 2) {

@@ -75,27 +75,7 @@ if (isset($_POST['submit'])) {
 
             ?>
         <form action="" method="post">
-            <div class="txt_field">
-                <label for="programCategory_name">Program: </label>
-                <select id="programCategory_name" name="programCategory_name">
-                    <option value="1">Senior High</option>
-                    <option value="2">College</option>
-                </select>
-            </div>
-            <div class="txt_field">
-            <label for="course_name">Course: </label>
-                <select id="course_name" name="course_name">
-                    <option value="1">ABM</option>
-                    <option value="2">HUMMS</option>
-                    <option value="3">STEM</option>
-                    <option value="4">MAWD</option>
-                    <option value="5">BSIT</option>
-                    <option value="6">BSBA</option>
-                    <option value="7">BSHM</option>
-                    <option value="8">BSTM</option>
-                    <option value="9">BScPE</option>
-                </select>
-            </div>
+            
             
             <div class="txt_field">
                 <input type="text" name="name" required>

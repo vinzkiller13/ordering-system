@@ -7,7 +7,7 @@ include 'ordering_systemData/config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>STUDENT LOGIN</title>
     <link rel="stylesheet" href="css/stud_login.css">
 </head>
 <body>
@@ -22,6 +22,7 @@ include 'ordering_systemData/config.php';
                 };
             };
             ?>
+            
             <div class="txt_field">
                 <input type="email" name="username" required>
                 <span></span>

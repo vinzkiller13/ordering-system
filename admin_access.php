@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
 
             if (password_verify($password, $hashedPassword)) {
                 if ($row['account_id'] == 3) {
+                    $_SESSION['username'] = $username;
                     header('location: admin_homepage.php');
                     exit();
                 }

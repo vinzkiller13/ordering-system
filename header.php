@@ -5,7 +5,7 @@ include 'ordering_systemData/config.php';
 
    <div class="flex">
 
-      <a href="student_homepage.php" class="logo">ELJV</a>
+      <a href="student_homepage.php" class="logo">STI</a>
       <a href="products.php" class="products">products</a>
       
      

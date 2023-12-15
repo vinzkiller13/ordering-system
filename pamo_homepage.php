@@ -1,4 +1,20 @@
-    
+<?php session_start(); 
+$username = $_SESSION['username'];
+if($username == true){
+
+}else{
+  header('location: login.php');
+}
+$message[] = 'WELCOME '.$_SESSION['username'];
+?>
+<?php
+if(isset($message)){
+  foreach($message as $message){
+     echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+  };
+};
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>

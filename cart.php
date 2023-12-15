@@ -1,6 +1,6 @@
 <?php
    session_start();
-
+   include 'session.php';
 include 'ordering_systemData/config.php';
 
 if(isset($_POST['update_update_btn'])){
@@ -128,7 +128,6 @@ if(isset($_GET['delete_all'])){
 
 </div>
    
-<!-- custom js file link  -->
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/student_shopping.js"></script>

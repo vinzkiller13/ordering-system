@@ -1,9 +1,21 @@
 <?php session_start(); 
-  if (isset($_SESSION['name'])) {
-    echo $_SESSION['name'];
-} else {
-    // echo "Name not set in session";
-}?> 
+$username = $_SESSION['username'];
+if($username == true){
+
+}else{
+  header('location: login.php');
+}
+//   echo "<h2>Welcome</h2>".$_SESSION['username'];
+$message[] = 'WELCOME '.$_SESSION['username'];
+?>
+<?php
+if(isset($message)){
+  foreach($message as $message){
+     echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+  };
+};
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +28,7 @@
    <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/footer.css">
    <link rel="stylesheet" href="css/carousel.css">
+   <link rel="stylesheet" href="css/st.css">
    <link rel="stylesheet" href="css/homepage.css">
    <link rel="stylesheet" href="css/products.css">
 

@@ -8,18 +8,17 @@ if (isset($_POST['submit'])) {
 
     $select_student_account = "SELECT * FROM `student_account` WHERE `username` = '$username'";
     $result = mysqli_query($conn, $select_student_account);
+    
 
     if ($result) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            echo 'Entered Password: ' . $password . '<br>';
-            echo 'Hashed Password from Database: ' . $hashedPassword . '<br>';
 
             if (password_verify($password, $hashedPassword)) {
                 if ($row['account_id'] == 1) {
-                    $_SESSION['name'] = $name;
+                    $_SESSION['username'] = $username;
                     header('location: student_homepage.php');
                     exit();
                 } else {

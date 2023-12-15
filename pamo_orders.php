@@ -1,8 +1,7 @@
 <?php
 
 include 'ordering_systemData/config.php';
-
-
+session_start();
 ?>
 
 <!DOCTYPE html>
